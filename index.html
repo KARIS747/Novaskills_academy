@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaSkills Academy Yaoundé - Formation Professionnelle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Palette Premium Tech */
-            --primary: #0f172a;      /* Bleu nuit très foncé */
-            --primary-light: #1e293b; 
-            --secondary: #3b82f6;    /* Bleu électrique vibrant */
-            --accent: #f59e0b;       /* Doré/Ambre pour le prestige */
-            --bg-body: #f8fafc;      /* Gris très clair, presque blanc */
-            --bg-card: #ffffff;
-            --text-main: #334155;
-            --text-light: #64748b;
+            /* Palette Vert Impérial & Blanc */
+            --primary: #064e3b;      /* Vert Forêt très profond */
+            --primary-dark: #022c22; /* Presque noir */
+            --secondary: #10b981;    /* Vert Émeraude vif pour l'action */
+            --accent: #d1fae5;       /* Vert menthe très clair pour les fonds */
+            --surface: #ffffff;      /* Blanc pur */
+            --bg-body: #f8fafc;      /* Gris très léger pour le contraste */
             
-            /* Effets */
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --gradient-hero: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.9) 100%);
-            --radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --text-inverse: #ffffff;
+            
+            /* Design System */
+            --radius: 8px;           /* Coins moins arrondis pour plus de sérieux */
+            --shadow-subtle: 0 4px 20px -5px rgba(6, 78, 59, 0.1);
+            --shadow-hover: 0 20px 40px -10px rgba(6, 78, 59, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         * {
@@ -37,84 +36,80 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             line-height: 1.7;
             color: var(--text-main);
             background-color: var(--bg-body);
-            overflow-x: hidden;
         }
 
-        /* Bandeau École Fictive */
+        /* BANDEAU FICTIF */
         .fictive-banner {
-            background: linear-gradient(90deg, #b91c1c, #dc2626);
-            color: white;
+            background-color: #000;
+            color: #fff;
             text-align: center;
-            padding: 10px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            padding: 8px;
+            font-size: 0.8rem;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
             position: relative;
             z-index: 2000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         /* Typography */
-        h1, h2, h3, h4, h5 {
-            font-family: 'Outfit', sans-serif;
+        h1, h2, h3 {
             color: var(--primary);
+            font-weight: 700;
             line-height: 1.2;
         }
-
+        
+        /* Titres avec une touche plus "Classe/Éditorial" */
         h1 {
+            font-family: 'Playfair Display', serif; /* Serif pour le titre principal */
             font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
             margin-bottom: 1.5rem;
         }
 
         h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             position: relative;
-            padding-bottom: 15px;
             display: inline-block;
         }
 
+        /* Petit soulignement vert élégant */
         h2::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin-top: 10px;
         }
 
-        section {
-            padding: 100px 20px;
-            max-width: 100%;
-            position: relative;
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
-        /* Header & Nav */
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header "Clean White" */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
+            background-color: var(--surface);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         .header-container {
@@ -123,451 +118,421 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .logo-icon {
-            font-size: 2rem;
-            color: var(--secondary);
-            background: rgba(59, 130, 246, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
+            font-size: 1.8rem;
+            color: var(--surface);
+            background-color: var(--primary);
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: var(--radius);
         }
 
         .logo-text h2 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin: 0;
-            color: var(--primary);
-            border: none;
-            padding: 0;
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
             letter-spacing: -0.5px;
         }
         
         .logo-text h2::after { display: none; }
 
         .logo-text p {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-weight: 500;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: -2px;
+            letter-spacing: 1.5px;
+            color: var(--secondary);
+            font-weight: 600;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 40px;
         }
 
         nav a {
-            color: var(--primary);
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
-            position: relative;
-            padding: 5px 0;
         }
 
         nav a:hover {
             color: var(--secondary);
         }
 
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: var(--transition);
-        }
-
-        nav a:hover::before {
-            width: 100%;
-        }
-
-        /* Hero Section */
+        /* Hero Section - Vert Profond */
         .hero {
-            background: var(--gradient-hero), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(6, 78, 59, 0.92), rgba(2, 44, 34, 0.95)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 160px 20px 120px;
+            color: var(--text-inverse);
+            padding: 140px 0 160px; /* Extra padding bottom for overlap */
             text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            margin-bottom: 0;
+            position: relative;
         }
 
         .hero h1 {
-            color: white;
+            color: var(--text-inverse);
             max-width: 900px;
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: #cbd5e1;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 40px;
+            opacity: 0.9;
             font-weight: 300;
         }
 
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            background: var(--secondary);
+            display: inline-block;
+            background-color: var(--secondary);
             color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
+            padding: 18px 45px;
+            border-radius: 50px; /* Pill shape */
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
             transition: var(--transition);
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
-            border: 2px solid transparent;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
         }
 
         .cta-button:hover {
+            background-color: #059669;
             transform: translateY(-3px);
-            background-color: #2563eb;
-            box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
         }
 
-        /* Cards & Features */
+        /* Feature Cards (Overlap) */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: -80px; /* Overlap effect */
+            margin-top: -100px;
             position: relative;
             z-index: 10;
         }
 
         .feature-card {
-            background: white;
-            padding: 40px 30px;
+            background-color: var(--surface);
+            padding: 40px;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-            text-align: left;
+            box-shadow: var(--shadow-subtle);
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.03);
+            border-top: 4px solid var(--secondary); /* Top border accent */
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-hover);
         }
 
         .feature-icon {
-            font-size: 1.8rem;
-            color: white;
-            background: var(--primary);
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: var(--accent);
             width: 60px;
             height: 60px;
-            border-radius: 14px;
-            display: inline-flex;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
-            transition: var(--transition);
         }
 
-        .feature-card:hover .feature-icon {
-            background: var(--secondary);
-            transform: rotate(5deg);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
+        /* Section blanche standard */
+        .section-light {
+            background-color: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-subtle);
+            padding: 50px;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         /* Courses */
         .courses-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 35px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         .course-card {
-            background: white;
+            background-color: var(--surface);
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-subtle);
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
             display: flex;
             flex-direction: column;
-            position: relative;
         }
 
         .course-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--secondary);
         }
 
         .course-header {
-            background-color: white;
-            color: var(--primary);
-            padding: 30px 25px 0;
-            text-align: left;
-            border-bottom: none;
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+            position: relative;
         }
-
+        
         .course-header h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
+            color: white;
             margin: 0;
+            font-size: 1.3rem;
         }
 
         .course-content {
-            padding: 25px;
+            padding: 30px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .course-meta {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .course-meta span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
         .course-details {
             list-style: none;
-            margin: 0 0 25px 0;
-            padding: 0;
+            margin: 20px 0;
+            font-size: 0.95rem;
         }
 
         .course-details li {
-            padding: 10px 0;
-            border-bottom: 1px solid #f1f5f9;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
             display: flex;
             align-items: center;
-            font-size: 0.95rem;
-            color: var(--text-main);
+        }
+        
+        .course-details li i {
+            margin-right: 10px;
         }
         
         .course-details li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--success); /* Will define below or stick to green */
-            color: #10b981;
-            margin-right: 12px;
-            font-size: 0.8rem;
-        }
-
-        .course-details li:last-child {
-            border-bottom: none;
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 0;
+            margin-right: 10px;
         }
 
         .price-tag {
-            background: rgba(245, 158, 11, 0.1);
-            color: #d97706;
-            padding: 12px 20px;
-            border-radius: 12px;
+            margin-top: auto;
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 10px 0;
+            border-radius: var(--radius);
             font-weight: 700;
             text-align: center;
-            margin-top: auto;
-            border: 1px solid rgba(245, 158, 11, 0.2);
-        }
-
-        /* Section Light / Generic Box */
-        .section-light {
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-            padding: 60px;
-            margin-bottom: 40px;
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 20px;
-            border-radius: 12px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
             transition: var(--transition);
         }
         
-        .faq-item:hover {
-            border-color: var(--secondary);
+        .course-card:hover .price-tag {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* FAQ Style Pro */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 0;
         }
 
         .faq-question {
-            background-color: white;
-            color: var(--primary);
-            padding: 25px;
+            padding: 25px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            color: var(--primary);
         }
 
         .faq-question:hover {
-            background-color: #f8fafc;
             color: var(--secondary);
         }
 
-        .faq-question.active {
-            background-color: #f1f5f9;
-            color: var(--secondary);
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .faq-question.active .faq-icon {
+            background: var(--secondary);
+            color: white;
+            transform: rotate(45deg);
         }
 
         .faq-answer {
-            background-color: white;
-            border-top: 1px solid #f1f5f9;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
         }
-        
+
         .faq-answer p {
-            padding: 25px;
+            padding-bottom: 25px;
             color: var(--text-light);
         }
 
         /* Contact */
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-        }
-
-        .contact-item {
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 12px;
-            transition: var(--transition);
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
         
-        .contact-item:hover {
-            background: white;
-            box-shadow: var(--shadow-sm);
+        .contact-info-box {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
         }
-
-        .contact-icon {
-            background: var(--secondary);
-            border-radius: 10px;
-            font-size: 1rem;
-            width: 40px;
-            height: 40px;
-            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        
+        .contact-info-box h3, .contact-info-box p {
+            color: white;
+        }
+        
+        .contact-list-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-list-icon {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 5px;
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            padding: 80px 0 40px;
-            margin-top: 60px;
-            font-size: 0.95rem;
+            background-color: var(--primary-dark);
+            color: #cbd5e1;
+            padding: 80px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-section h3 {
             color: white;
-            margin-bottom: 30px;
-            border-left: none;
-            padding-left: 0;
-            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
             position: relative;
-            padding-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--secondary);
         }
         
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--accent);
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 12px;
         }
 
-        .footer-section ul li a {
+        .footer-section a {
             color: #94a3b8;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        .footer-section ul li a:hover {
+        .footer-section a:hover {
             color: white;
-            padding-left: 8px;
+            padding-left: 5px;
         }
 
         .social-icons a {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: 0.3s;
         }
         
         .social-icons a:hover {
-            background: var(--secondary);
-            border-color: var(--secondary);
+            color: var(--secondary);
         }
 
         .copyright {
-            margin-top: 60px;
-            border-color: rgba(255,255,255,0.1);
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
-        /* Responsive */
+        /* Mobile */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
         @media (max-width: 992px) {
             h1 { font-size: 2.8rem; }
             .features { margin-top: 40px; }
             .contact-container { grid-template-columns: 1fr; }
-            .section-light { padding: 40px 25px; }
         }
 
         @media (max-width: 768px) {
             .header-container { flex-direction: column; gap: 20px; }
-            nav ul { gap: 20px; font-size: 0.9rem; }
-            .hero { padding: 120px 20px 80px; clip-path: none; }
-            h1 { font-size: 2.2rem; }
-            .mobile-menu-btn { color: var(--primary); display: none; } /* Keeping logic simple */
-        }
-        
-        @media (max-width: 576px) {
-            .mobile-menu-btn { display: block; }
-            nav { display: none; width: 100%; background: white; padding: 20px; border-radius: 12px; box-shadow: var(--shadow-lg); position: absolute; top: 90px; left: 0; z-index: 999; }
+            nav { display: none; width: 100%; text-align: center; margin-top: 20px; }
             nav.show { display: block; }
-            nav ul { flex-direction: column; text-align: center; }
-            .hero h1 { font-size: 2rem; }
+            nav ul { flex-direction: column; gap: 15px; }
+            .mobile-menu-btn { display: block; position: absolute; right: 25px; top: 25px; }
+            .hero { padding: 100px 0; }
+            .hero h1 { font-size: 2.2rem; padding: 0 10px; }
         }
     </style>
 </head>
 <body>
     <div class="fictive-banner">
-        <i class="fas fa-info-circle"></i> Attention : Ceci est une page de démonstration pour une école fictive
+        ⚠️ Page de démonstration pour une école fictive ⚠️
     </div>
 
     <header>
         <div class="header-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-graduation-cap"></i>
+                    <i class="fas fa-university"></i>
                 </div>
                 <div class="logo-text">
                     <h2>NovaSkills</h2>
@@ -585,7 +550,7 @@
                     <li><a href="#formations">Formations</a></li>
                     <li><a href="#financement">Financement</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" style="color: var(--primary); border: 2px solid var(--primary); padding: 8px 20px; border-radius: 4px;">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -593,61 +558,57 @@
 
     <section class="hero" id="accueil">
         <div class="container">
-            <h1>Formez-vous aux métiers du numérique</h1>
-            <p>NovaSkills Academy Yaoundé est un centre d'excellence technologique. Nous transformons votre potentiel en compétences concrètes grâce à des formations orientées emploi.</p>
-            <a href="#formations" class="cta-button">Découvrir nos formations <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+            <h1>L'Excellence Numérique au Cameroun</h1>
+            <p>NovaSkills Academy est le pôle de référence pour la formation technologique professionnelle. Développez des compétences d'élite dans un environnement prestigieux.</p>
+            <a href="#formations" class="cta-button">Explorer nos cursus</a>
         </div>
     </section>
 
-    <section class="container" style="margin-top: -50px; z-index: 10; position: relative;">
+    <section class="container" style="padding-bottom: 0;">
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marked-alt"></i>
                 </div>
-                <h3>Campus Moderne</h3>
-                <p>Situé à Nkolmesseng, Avenue Monseigneur Vogt. Un cadre d'apprentissage stimulant au cœur de Yaoundé.</p>
+                <h3>Campus Prestige</h3>
+                <p>Situé à Nkolmesseng, notre campus offre un cadre d'étude calme, moderne et propice à l'excellence intellectuelle.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-laptop-house"></i>
                 </div>
-                <h3>Pédagogie Hybride</h3>
-                <p>Flexibilité totale avec des formations en présentiel dans nos labs équipés ou en ligne partout en Afrique.</p>
+                <h3>Flexibilité Totale</h3>
+                <p>Formations dispensées en présentiel dans nos laboratoires ou en e-learning via notre plateforme dédiée.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-certificate"></i>
+                    <i class="fas fa-scroll"></i>
                 </div>
-                <h3>Certificats Reconnus</h3>
-                <p>Validez vos compétences avec des certifications professionnelles valorisées par les entreprises locales.</p>
+                <h3>Certification</h3>
+                <p>Obtenez un certificat professionnel reconnu, véritable passeport pour les entreprises locales et internationales.</p>
             </div>
         </div>
     </section>
 
     <section id="formations">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2>Nos Programmes d'Excellence</h2>
-                <p style="color: var(--text-light); max-width: 600px; margin: 0 auto;">Des cursus intensifs conçus par des experts pour répondre aux besoins réels du marché du travail camerounais et international.</p>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>Nos Programmes Académiques</h2>
+                <p>Des cursus rigoureux conçus par des experts de l'industrie</p>
             </div>
             
             <div class="courses-container">
                 <div class="course-card">
                     <div class="course-header">
-                        <h3>Développement Fullstack</h3>
+                        <h3>Développement Web Fullstack</h3>
                     </div>
                     <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="far fa-clock"></i> 3 mois</span>
-                            <span><i class="far fa-user"></i> Débutant</span>
-                        </div>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Maîtrisez l'intégralité de la création web moderne.</p>
                         <ul class="course-details">
-                            <li>HTML5, CSS3, JavaScript ES6+</li>
-                            <li>React.js & Node.js ecosystem</li>
-                            <li>Bases de données (MongoDB, SQL)</li>
-                            <li>DevOps basics (Git, Docker)</li>
-                            <li>3 projets portfolio complets</li>
+                            <li>3 mois intensifs</li>
+                            <li>HTML5, CSS3, JS, React & Node</li>
+                            <li>Base de données & Déploiement</li>
+                            <li>3 Projets Portfolio</li>
                         </ul>
                         <div class="price-tag">250 000 FCFA</div>
                     </div>
@@ -658,16 +619,12 @@
                         <h3>Data Science & IA</h3>
                     </div>
                     <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="far fa-clock"></i> 4 mois</span>
-                            <span><i class="fas fa-chart-line"></i> Avancé</span>
-                        </div>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Analysez le monde à travers la donnée.</p>
                         <ul class="course-details">
-                            <li>Python avancé (NumPy, Pandas)</li>
-                            <li>Statistiques & Data Viz</li>
-                            <li>Machine Learning (TensorFlow)</li>
-                            <li>Big Data & SQL avancé</li>
-                            <li>Mentorat projet individuel</li>
+                            <li>4 mois (avec projet final)</li>
+                            <li>Python, Pandas, NumPy</li>
+                            <li>Machine Learning & Stats</li>
+                            <li>Big Data Basics</li>
                         </ul>
                         <div class="price-tag">350 000 FCFA</div>
                     </div>
@@ -675,19 +632,15 @@
                 
                 <div class="course-card">
                     <div class="course-header">
-                        <h3>Marketing Digital</h3>
+                        <h3>Marketing Digital & E-commerce</h3>
                     </div>
                     <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="far fa-clock"></i> 2 mois</span>
-                            <span><i class="far fa-lightbulb"></i> Business</span>
-                        </div>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Boostez la croissance des entreprises.</p>
                         <ul class="course-details">
-                            <li>Stratégie Social Media 360°</li>
-                            <li>SEO/SEA & Google Analytics</li>
-                            <li>Copywriting & Branding</li>
-                            <li>E-commerce (Shopify/Woo)</li>
-                            <li>Focus marché africain</li>
+                            <li>2 mois pratiques</li>
+                            <li>Stratégie Réseaux Sociaux</li>
+                            <li>SEO, SEA & Analytics</li>
+                            <li>Shopify & WooCommerce</li>
                         </ul>
                         <div class="price-tag">150 000 FCFA</div>
                     </div>
@@ -698,16 +651,12 @@
                         <h3>Cybersécurité</h3>
                     </div>
                     <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="far fa-clock"></i> 3 mois</span>
-                            <span><i class="fas fa-shield-alt"></i> Interm.</span>
-                        </div>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Protégez les infrastructures critiques.</p>
                         <ul class="course-details">
-                            <li>Architecture réseau sécurisée</li>
-                            <li>Ethical Hacking & Pentesting</li>
-                            <li>Sécurité applicative Web</li>
-                            <li>Conformité RGPD & Législation</li>
-                            <li>Préparation certification</li>
+                            <li>3 mois spécialisés</li>
+                            <li>Sécurité Réseau & Web</li>
+                            <li>Ethical Hacking (Bases)</li>
+                            <li>Normes & RGPD</li>
                         </ul>
                         <div class="price-tag">400 000 FCFA</div>
                     </div>
@@ -716,35 +665,40 @@
         </div>
     </section>
 
-    <section id="financement" style="background-color: #f1f5f9;">
+    <section id="financement" style="background-color: #f0fdf4;">
         <div class="container">
             <div class="section-light">
-                <h2 style="margin-bottom: 20px;">Investissez dans votre Avenir</h2>
-                <p style="margin-bottom: 40px; color: var(--text-light);">Nous croyons que le talent est universel, mais pas les opportunités. Voici nos solutions pour vous accompagner.</p>
-                
-                <div class="features" style="margin-top: 0; box-shadow: none;">
-                    <div class="feature-card" style="background: #f8fafc; border: none; box-shadow: none;">
-                        <div class="feature-icon" style="background: #10b981;">
-                            <i class="fas fa-wallet"></i>
+                <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2>Investissement & Financement</h2>
+                        <p style="margin-bottom: 20px;">L'éducation est le meilleur investissement. Nous rendons l'excellence accessible.</p>
+                        <div style="background: var(--primary); color: white; padding: 30px; border-radius: var(--radius);">
+                            <h3 style="color: white; border: none; margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>Facilités de paiement</h3>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 10px;">• Réduction de <strong>5%</strong> pour paiement comptant</li>
+                                <li style="margin-bottom: 10px;">• Paiement en <strong>2 fois</strong> (50% inscription, 50% mi-parcours)</li>
+                                <li style="margin-bottom: 10px;">• Mensualités possibles (sur dossier)</li>
+                            </ul>
                         </div>
-                        <h3>Facilités de Paiement</h3>
-                        <ul style="text-align: left; list-style: none; margin-top: 20px; color: var(--text-main);">
-                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 10px;"></i> <strong>-5%</strong> pour paiement comptant</li>
-                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 10px;"></i> Paiement en <strong>2 fois</strong> (50% / 50%)</li>
-                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 10px;"></i> Mensualités (3 à 4 tranches)</li>
-                        </ul>
                     </div>
-                    
-                    <div class="feature-card" style="background: #f8fafc; border: none; box-shadow: none;">
-                        <div class="feature-icon" style="background: var(--accent);">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>Bourses & Avantages</h3>
-                        <ul style="text-align: left; list-style: none; margin-top: 20px; color: var(--text-main);">
-                            <li style="padding: 8px 0;"><i class="fas fa-user-graduate" style="color: var(--accent); margin-right: 10px;"></i> <strong>Étudiants :</strong> -15% sur justificatif</li>
-                            <li style="padding: 8px 0;"><i class="fas fa-users" style="color: var(--accent); margin-right: 10px;"></i> <strong>Groupes (3+) :</strong> -10% / personne</li>
-                            <li style="padding: 8px 0;"><i class="fas fa-undo" style="color: var(--accent); margin-right: 10px;"></i> <strong>Alumni :</strong> -20% sur la 2ème formation</li>
-                        </ul>
+                    <div style="flex: 1; min-width: 300px;">
+                         <div style="background: white; padding: 30px; border-radius: var(--radius); border: 1px solid #e2e8f0;">
+                            <h3><i class="fas fa-gift" style="color: var(--primary); margin-right: 10px;"></i>Offres Spéciales</h3>
+                            <div style="display: flex; gap: 20px; flex-direction: column; margin-top: 20px;">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="background: var(--accent); padding: 10px; border-radius: 50%;"><i class="fas fa-user-graduate" style="color: var(--primary);"></i></div>
+                                    <div><strong>Étudiants :</strong> -15% (sur justificatif)</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="background: var(--accent); padding: 10px; border-radius: 50%;"><i class="fas fa-users" style="color: var(--primary);"></i></div>
+                                    <div><strong>Groupes (3+) :</strong> -10% par personne</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="background: var(--accent); padding: 10px; border-radius: 50%;"><i class="fas fa-handshake" style="color: var(--primary);"></i></div>
+                                    <div><strong>Parrainage :</strong> -10 000 FCFA par filleul</div>
+                                </div>
+                            </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -752,128 +706,116 @@
     </section>
 
     <section id="faq">
-        <div class="container" style="max-width: 900px;">
-            <div style="text-align: center; margin-bottom: 40px;">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 50px;">
                 <h2>Questions Fréquentes</h2>
-                <p>Tout ce que vous devez savoir avant de nous rejoindre.</p>
             </div>
             
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Où se trouve exactement votre campus à Yaoundé ?</span>
+                        <span>Où se trouve exactement le campus ?</span>
                         <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Nous sommes situés à l'Immeuble Nkolmesseng, Avenue Monseigneur Vogt, au 3ème étage. C'est à proximité du Carrefour Biyem-Assi, facile d'accès en taxi ou en bus.</p>
+                        <p>Immeuble Nkolmesseng, Avenue Monseigneur Vogt, 3ème étage. Proche du Carrefour Biyem-Assi, un emplacement central et accessible.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Dois-je avoir mon propre ordinateur ?</span>
+                        <span>Faut-il un ordinateur portable ?</span>
                         <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Pour les formations en présentiel, nous fournissons des ordinateurs en lab, mais il est fortement recommandé d'avoir son propre ordinateur pour travailler à la maison et pratiquer efficacement.</p>
+                        <p>Oui, c'est fortement recommandé pour la pratique personnelle, même si nous équipons nos laboratoires pour les sessions en présentiel.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Quels sont les moyens de paiement acceptés ?</span>
+                        <span>Quels sont les modes de paiement ?</span>
                         <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Nous acceptons les espèces au campus, les virements bancaires, ainsi que les paiements mobiles : Orange Money, MTN Mobile Money et PayPal pour l'international.</p>
+                        <p>Virement bancaire, Dépôt espèces, Orange Money, MTN Mobile Money et PayPal (pour l'international).</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Le certificat est-il reconnu par l'État ?</span>
+                        <span>Délivrez-vous un diplôme d'État ?</span>
                         <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Il s'agit d'une certification professionnelle privée attestant de compétences techniques spécifiques très demandées. Bien que ce ne soit pas un diplôme d'État (type BTS), notre réputation auprès des entreprises partenaires facilite l'insertion.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Comment se déroule la formation en ligne ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Vous avez accès à notre plateforme LMS 24/7. Le parcours inclut des vidéos, des quiz, et surtout des sessions live hebdomadaires avec un mentor dédié pour corriger vos projets et répondre aux questions.</p>
+                        <p>Non, nous délivrons une Certification de Compétences Professionnelles, très prisée par les recruteurs du secteur privé pour son aspect pratique.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="padding-bottom: 0;">
         <div class="container">
-            <div class="section-light">
-                <h2 style="margin-bottom: 40px;">Contactez-nous</h2>
-                
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div style="display: flex; gap: 20px;">
-                                <div class="contact-icon" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white;">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 5px;">Notre Adresse</h4>
-                                    <p style="font-size: 0.9rem; color: var(--text-light);">Immeuble Nkolmesseng,<br>Avenue Monseigneur Vogt<br>Yaoundé, Cameroun</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div style="display: flex; gap: 20px;">
-                                <div class="contact-icon" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white;">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 5px;">Téléphone & WhatsApp</h4>
-                                    <p style="font-size: 0.9rem; color: var(--text-light);">(+237) 699 87 65 43<br>(+237) 655 44 33 22 (WhatsApp)</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div style="display: flex; gap: 20px;">
-                                <div class="contact-icon" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white;">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 5px;">Email</h4>
-                                    <p style="font-size: 0.9rem; color: var(--text-light);">contact@novaskills-yaounde.cm<br>info@novaskills-yaounde.cm</p>
-                                </div>
-                            </div>
+            <div class="contact-container">
+                <div class="contact-info-box">
+                    <h2 style="color: white; border: none; margin-bottom: 30px;">Nous contacter</h2>
+                    
+                    <div class="contact-list-item">
+                        <i class="fas fa-map-pin contact-list-icon"></i>
+                        <div>
+                            <strong>Adresse</strong><br>
+                            Immeuble Nkolmesseng, Avenue Monseigneur Vogt<br>Yaoundé, Cameroun
                         </div>
                     </div>
                     
-                    <div style="background: var(--primary); color: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-lg);">
-                        <h3 style="color: white; margin-bottom: 20px;">Processus d'Inscription</h3>
-                        <ol style="padding-left: 20px; margin-bottom: 30px; line-height: 2;">
-                            <li>Remplissez le formulaire de pré-inscription en ligne</li>
-                            <li>Entretien de validation (15-30 min)</li>
-                            <li>Test de logique (selon la formation)</li>
-                            <li>Finalisation administrative et paiement</li>
-                            <li><strong>Démarrez votre nouvelle carrière !</strong></li>
-                        </ol>
-                        
-                        <h4 style="color: white; margin-bottom: 15px; font-size: 1rem;">Suivez-nous</h4>
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <div class="contact-list-item">
+                        <i class="fas fa-phone contact-list-icon"></i>
+                        <div>
+                            <strong>Téléphone</strong><br>
+                            Admin: (+237) 233 44 56 78<br>
+                            WhatsApp: (+237) 655 44 33 22
                         </div>
+                    </div>
+                    
+                    <div class="contact-list-item">
+                        <i class="fas fa-envelope contact-list-icon"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            contact@novaskills-yaounde.cm
+                        </div>
+                    </div>
+                    
+                    <div class="contact-list-item">
+                        <i class="fas fa-clock contact-list-icon"></i>
+                        <div>
+                            <strong>Horaires</strong><br>
+                            Lun - Ven: 8h00 - 18h00<br>
+                            Sam: 9h00 - 13h00
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons" style="margin-top: 40px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow-subtle);">
+                    <h3>Processus d'Inscription</h3>
+                    <p style="margin-bottom: 30px;">Rejoindre NovaSkills se fait en 4 étapes simples :</p>
+                    
+                    <ol style="padding-left: 20px; line-height: 2;">
+                        <li><strong>Pré-inscription :</strong> Remplissez le formulaire en ligne.</li>
+                        <li><strong>Entretien :</strong> Discussion avec un conseiller (15 min).</li>
+                        <li><strong>Validation :</strong> Étude du dossier et test éventuel.</li>
+                        <li><strong>Démarrage :</strong> Paiement et accès à la plateforme.</li>
+                    </ol>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="#" class="cta-button" style="width: 100%;">Candidater maintenant</a>
                     </div>
                 </div>
             </div>
@@ -882,129 +824,81 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+            <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo" style="margin-bottom: 20px;">
-                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem; background: rgba(255,255,255,0.1);">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="logo-text">
-                            <h2 style="color: white; font-size: 1.2rem;">NovaSkills</h2>
-                        </div>
-                    </div>
-                    <p style="opacity: 0.8; line-height: 1.6;">Le centre de référence pour les métiers du numérique à Yaoundé. Excellence, Pratique et Innovation.</p>
+                    <h3>NovaSkills Academy</h3>
+                    <p>L'école de l'excellence technologique à Yaoundé. Nous formons les leaders du numérique de demain.</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Formations</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#formations" style="text-decoration: none; transition: 0.3s;">Développement Web</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#formations" style="text-decoration: none; transition: 0.3s;">Data Science & IA</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#formations" style="text-decoration: none; transition: 0.3s;">Marketing Digital</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#formations" style="text-decoration: none; transition: 0.3s;">Cybersécurité</a></li>
+                    <ul>
+                        <li><a href="#">Développement Web</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Cybersécurité</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Liens Utiles</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#accueil" style="text-decoration: none; transition: 0.3s;">Accueil</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#financement" style="text-decoration: none; transition: 0.3s;">Financement</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#faq" style="text-decoration: none; transition: 0.3s;">FAQ</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#contact" style="text-decoration: none; transition: 0.3s;">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Nous Trouver</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i> Immeuble Nkolmesseng, Yaoundé</li>
-                        <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fas fa-phone-alt" style="color: var(--secondary); margin-top: 5px;"></i> (+237) 699 87 65 43</li>
-                        <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fas fa-envelope" style="color: var(--secondary); margin-top: 5px;"></i> contact@novaskills.cm</li>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#financement">Financement</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="copyright" style="text-align: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.6; font-size: 0.85rem;">
-                <p>&copy; 2024 NovaSkills Academy Yaoundé. Tous droits réservés. <br> <strong>PAGE DE DÉMONSTRATION - ÉCOLE FICTIVE</strong></p>
+            <div class="copyright">
+                <p>&copy; 2024 NovaSkills Academy Yaoundé. Tous droits réservés.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: var(--secondary);">CE SITE EST UNE DÉMONSTRATION POUR UNE ÉCOLE FICTIVE</p>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="back-to-top" id="backToTop" style="position: fixed; bottom: 30px; right: 30px; background: var(--secondary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 99;">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <script>
-        // Scripts conservés et optimisés
+        // Scripts interactifs conservés
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
         
         mobileMenuBtn.addEventListener('click', () => {
             mainNav.classList.toggle('show');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('show') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('show') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                const icon = question.querySelector('.faq-icon i');
                 question.classList.toggle('active');
-                
                 if (question.classList.contains('active')) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
-                    answer.style.padding = "25px";
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
                 } else {
                     answer.style.maxHeight = null;
-                    answer.style.padding = "0 25px";
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
                 }
                 
-                // Close others
-                faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
-                        otherQuestion.classList.remove('active');
-                        otherQuestion.nextElementSibling.style.maxHeight = null;
-                        otherQuestion.nextElementSibling.style.padding = "0 25px";
-                        otherQuestion.querySelector('.faq-icon i').classList.remove('fa-minus');
-                        otherQuestion.querySelector('.faq-icon i').classList.add('fa-plus');
+                // Fermer les autres
+                faqQuestions.forEach(other => {
+                    if (other !== question) {
+                        other.classList.remove('active');
+                        other.nextElementSibling.style.maxHeight = null;
                     }
                 });
             });
         });
         
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.style.opacity = '1';
-                backToTop.style.visibility = 'visible';
-            } else {
-                backToTop.style.opacity = '0';
-                backToTop.style.visibility = 'hidden';
-            }
-        });
-        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: target.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                    if (mainNav.classList.contains('show')) {
-                        mainNav.classList.remove('show');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
+                    mainNav.classList.remove('show');
                 }
             });
         });
@@ -1013,5 +907,3 @@
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js" defer></script>
 <script src="https://files.bpcontent.cloud/2026/01/15/00/20260115005427-YWGBVJ4O.js" defer></script>
 </html>
-
-```
