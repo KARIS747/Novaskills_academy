@@ -56,18 +56,26 @@
     
     <!-- CSS & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --primary-dark: #1a3b2e;
+            --primary: #2a5c45;
+            --primary-light: #3a7d5c;
+            --accent: #e6b17e;
+            --accent-light: #f5d7b7;
+            --light: #f8faf8;
+            --white: #ffffff;
+            --off-white: #f9fbf9;
+            --dark: #1a2e24;
+            --gray: #e2e8e2;
+            --text-dark: #1e2b1e;
+            --text-light: #4a5f4a;
+            --shadow-sm: 0 10px 30px -10px rgba(26, 59, 46, 0.1);
+            --shadow-md: 0 20px 40px -12px rgba(26, 59, 46, 0.15);
+            --shadow-lg: 0 30px 60px -15px rgba(26, 59, 46, 0.2);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
@@ -77,87 +85,71 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: var(--text-dark);
+            background-color: var(--off-white);
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Clash Display', sans-serif;
             font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            letter-spacing: -0.02em;
         }
 
         h1 {
-            font-size: 2.5rem;
-            text-align: center;
+            font-size: 3.5rem;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        h1:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background-color: var(--secondary);
-            border-radius: 2px;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-top: 2rem;
-            border-left: 5px solid var(--secondary);
-            padding-left: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
         }
 
-        h3 {
-            font-size: 1.5rem;
-            color: var(--secondary);
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
         }
 
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .section-padding {
+            padding: 100px 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .section-light {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            padding: 40px;
-            margin-bottom: 40px;
-        }
-
-        /* Header & Navigation */
+        /* Modern Glass Header */
         header {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(42, 92, 69, 0.1);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -165,44 +157,61 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(0deg);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-icon i {
+            color: white;
+            font-size: 28px;
+            transform: rotate(0deg);
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(10deg) scale(1.05);
         }
 
         .logo-text h2 {
             font-size: 1.8rem;
-            margin-bottom: 0;
-            color: white;
+            color: var(--primary-dark);
+            margin: 0;
             border: none;
             padding: 0;
         }
 
         .logo-text p {
+            color: var(--text-light);
             font-size: 0.9rem;
-            opacity: 0.8;
+            font-weight: 400;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 35px;
         }
 
         nav a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
+            font-size: 1rem;
             transition: var(--transition);
-            padding: 8px 0;
             position: relative;
-        }
-
-        nav a:hover {
-            color: var(--secondary);
+            padding: 8px 0;
         }
 
         nav a:after {
@@ -212,8 +221,13 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
         }
 
         nav a:hover:after {
@@ -224,314 +238,542 @@
             display: none;
             background: none;
             border: none;
-            color: white;
-            font-size: 1.5rem;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Modern Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0;
         }
 
-        .hero h1 {
-            color: white;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(42, 92, 69, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        .hero h1:after {
-            background-color: var(--accent);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            margin-top: 20px;
-            border: 2px solid var(--accent);
-        }
-
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Features */
-        .features {
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--primary-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content h1 span:after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--accent-light);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(42, 92, 69, 0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(42, 92, 69, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(42, 92, 69, 0.1);
+        }
+
+        .floating-card i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .floating-card-text h4 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .floating-card-text p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: var(--white);
+            padding: 100px 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 60px;
         }
 
         .feature-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            background: var(--off-white);
+            padding: 40px;
+            border-radius: 30px;
             transition: var(--transition);
-            text-align: center;
+            border: 1px solid rgba(42, 92, 69, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            transition: var(--transition);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-card:hover:before {
+            height: 100%;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
+            background: var(--white);
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-sm);
         }
 
-        /* Courses */
-        .courses-container {
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+        }
+
+        .section-header h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .course-card {
-            background-color: white;
-            border-radius: 10px;
+            background: var(--white);
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
+            border: 1px solid rgba(42, 92, 69, 0.05);
         }
 
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
         }
 
         .course-header {
-            background-color: var(--secondary);
-            color: white;
-            padding: 20px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
         }
 
         .course-header h3 {
-            color: white; /* Titre en blanc dans l'en-tête bleu */
-            font-size: 1.3rem;
-            margin-bottom: 0;
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
         }
 
-        .course-header .course-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 5px;
-            color: white; /* Sous-titre aussi en blanc */
+        .course-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
         }
 
         .course-content {
-            padding: 25px;
+            padding: 30px;
         }
 
         .course-details {
             list-style: none;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
         .course-details li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #eee;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--gray);
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dark);
         }
 
-        .course-details li:last-child {
-            border-bottom: none;
+        .course-details li i {
+            color: var(--accent);
+            width: 20px;
         }
 
         .price-tag {
-            background-color: var(--accent);
-            color: white;
-            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--primary-dark);
+            padding: 12px 25px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-block;
-            margin-top: 15px;
-        }
-
-        /* SEO Optimized Headings */
-        .seo-heading {
-            margin-top: 40px;
-            color: var(--primary);
-            border-bottom: 2px solid var(--light);
-            padding-bottom: 10px;
-            font-size: 1.8rem;
-        }
-
-        .seo-content {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 8px;
             margin-top: 20px;
+            font-size: 1.3rem;
         }
 
-        /* FAQ */
-        .faq-container {
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .faq-grid {
             max-width: 900px;
-            margin: 40px auto 0;
+            margin: 60px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .faq-item {
-            margin-bottom: 15px;
-            border-radius: 8px;
+            background: var(--off-white);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(42, 92, 69, 0.05);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-light);
         }
 
         .faq-question {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px;
+            padding: 25px 30px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .faq-question:hover {
-            background-color: #243342;
-        }
-
-        .faq-question.active {
-            background-color: var(--secondary);
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            background: var(--white);
         }
 
         .faq-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
             transition: var(--transition);
         }
 
         .faq-question.active .faq-icon {
+            background: var(--accent);
             transform: rotate(45deg);
         }
 
         .faq-answer {
-            background-color: white;
-            padding: 0;
+            padding: 0 30px;
             max-height: 0;
             overflow: hidden;
             transition: var(--transition);
+            color: var(--text-light);
         }
 
         .faq-answer.show {
-            padding: 20px;
-            max-height: 1000px;
+            padding: 0 30px 25px;
+            max-height: 500px;
         }
 
-        /* Contact */
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+        }
+
         .contact-container {
+            max-width: 1280px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            gap: 60px;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+        .contact-info h2 {
+            color: white;
+        }
+
+        .contact-info h2:after {
+            background: linear-gradient(90deg, white, var(--accent));
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 20px;
+            margin: 30px 0;
         }
 
         .contact-icon {
-            background-color: var(--secondary);
-            color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-text h3 {
+            color: white;
             font-size: 1.2rem;
-            flex-shrink: 0;
+            margin-bottom: 5px;
         }
 
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 15px 0;
-            background-color: var(--light);
-            margin-bottom: 30px;
+        .contact-text p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
         }
 
-        .breadcrumb ul {
+        .social-links {
             display: flex;
-            list-style: none;
-            gap: 10px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            gap: 15px;
+            margin-top: 30px;
         }
 
-        .breadcrumb li {
-            color: var(--primary);
-        }
-
-        .breadcrumb a {
-            color: var(--secondary);
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .breadcrumb li:not(:last-child):after {
-            content: "›";
-            margin-left: 10px;
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            color: var(--primary-dark);
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary);
+            background: var(--primary-dark);
             color: white;
-            padding: 60px 0 30px;
-            margin-top: 60px;
+            padding: 80px 20px 40px;
         }
 
         .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
+            gap: 60px;
         }
 
         .footer-section h3 {
             color: white;
+            font-size: 1.2rem;
             margin-bottom: 25px;
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
         .footer-section ul {
@@ -543,69 +785,44 @@
         }
 
         .footer-section ul li a {
-            color: #ddd;
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
             transition: var(--transition);
+            display: inline-block;
         }
 
         .footer-section ul li a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-5px);
+            color: var(--accent);
+            transform: translateX(5px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 1200px;
-            margin: 0 auto;
-            opacity: 0.8;
-            font-size: 0.9rem;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
         }
 
-        /* Back to top button */
+        /* Back to top */
         .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: var(--secondary);
-            color: white;
             width: 50px;
             height: 50px;
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--primary-dark);
             text-decoration: none;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            box-shadow: var(--shadow-md);
             opacity: 0;
             visibility: hidden;
+            transition: var(--transition);
             z-index: 100;
         }
 
@@ -615,65 +832,41 @@
         }
 
         .back-to-top:hover {
-            background-color: var(--accent);
+            background: var(--primary);
+            color: white;
             transform: translateY(-5px);
         }
 
         /* Responsive */
         @media (max-width: 992px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
             }
             
             h2 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             
-            .hero h1 {
-                font-size: 2.8rem;
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .hero {
-                padding: 80px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-light {
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
             .mobile-menu-btn {
                 display: block;
-                position: absolute;
-                top: 25px;
-                right: 20px;
             }
             
             nav {
-                width: 100%;
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
             }
             
             nav.show {
@@ -683,33 +876,45 @@
             nav ul {
                 flex-direction: column;
                 gap: 0;
-                width: 100%;
-                margin-top: 20px;
             }
             
             nav ul li {
                 width: 100%;
-                text-align: center;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
             
             nav a {
                 display: block;
                 padding: 15px;
+                border-bottom: 1px solid var(--gray);
             }
             
-            .hero h1 {
-                font-size: 1.8rem;
+            nav a:after {
+                display: none;
             }
             
-            .courses-container {
-                grid-template-columns: 1fr;
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .floating-card {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 30px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -717,8 +922,8 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="logo-text">
-                    <h2>NovaSkills Academy</h2>
-                    <p>Yaoundé, Cameroun</p>
+                    <h2>NovaSkills</h2>
+                    <p>Academy Yaoundé</p>
                 </div>
             </div>
             
@@ -738,60 +943,89 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li>Formations Professionnelles</li>
-        </ul>
-    </div>
-
-    <!-- Hero Section -->
     <section class="hero" id="accueil">
-        <div class="container">
-            <h1>Formez-vous aux métiers du numérique</h1>
-            <p>NovaSkills Academy Yaoundé est un centre de formation professionnelle spécialisé dans les métiers du numérique et du business, proposant des formations pratiques, orientées emploi, accessibles en présentiel ou en ligne.</p>
-            <a href="#formations" class="cta-button">Découvrir nos formations</a>
-        </div>
-    </section>
-
-    <!-- Présentation -->
-    <section class="container">
-        <div class="section-light">
-            <h2>📍 Présentation générale de NovaSkills Academy Yaoundé</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Formez-vous aux <span>métiers du numérique</span></h1>
+                <p>NovaSkills Academy Yaoundé est le centre de formation professionnelle de référence au Cameroun, proposant des formations pratiques orientées emploi.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Étudiants formés</p>
                     </div>
-                    <h3>Localisation</h3>
-                    <p>Immeuble Nkolmesseng, Avenue Monseigneur Vogt, Yaoundé, Cameroun</p>
+                    <div class="stat-item">
+                        <h3>85%</h3>
+                        <p>Taux d'insertion</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <p>Formateurs experts</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3>Contact</h3>
-                    <p>(+237) 699 87 65 43<br>contact@novaskills-yaounde.cm</p>
+                
+                <div class="hero-buttons">
+                    <a href="#formations" class="btn-primary">Découvrir nos formations</a>
+                    <a href="#contact" class="btn-secondary">Nous contacter</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Campus NovaSkills Yaoundé">
+                <div class="floating-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="floating-card-text">
+                        <h4>Yaoundé, Cameroun</h4>
+                        <p>Immeuble Nkolmesseng</p>
                     </div>
-                    <h3>Modalités</h3>
-                    <p>Formations en présentiel à Yaoundé ou en ligne dans toute l'Afrique francophone</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Formations -->
-    <section id="formations">
+    <section class="features-section">
         <div class="container">
-            <h2>📚 Formations proposées à NovaSkills Academy</h2>
-            <p>Découvrez nos programmes de formation professionnelle conçus pour répondre aux besoins du marché</p>
+            <div class="section-header">
+                <h2>Pourquoi nous choisir ?</h2>
+                <p>Une pédagogie innovante adaptée aux besoins du marché africain</p>
+            </div>
             
-            <div class="courses-container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Formateurs experts</h3>
+                    <p>Des professionnels en activité avec minimum 5 ans d'expérience dans leur domaine.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>70% pratique</h3>
+                    <p>Une pédagogie axée sur la pratique avec des projets concrets et des cas réels.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Accompagnement</h3>
+                    <p>Suivi personnalisé et mentorat tout au long de votre formation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses-section" id="formations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos formations</h2>
+                <p>Des programmes conçus pour répondre aux besoins du marché</p>
+            </div>
+            
+            <div class="courses-grid">
                 <!-- Développement Web -->
                 <div class="course-card">
                     <div class="course-header">
@@ -799,17 +1033,14 @@
                         <div class="course-subtitle">Formation intensive de 3 mois</div>
                     </div>
                     <div class="course-content">
-                        <p><strong>Durée :</strong> 3 mois intensifs</p>
-                        <p><strong>Niveau :</strong> Débutant → Intermédiaire</p>
                         <ul class="course-details">
-                            <li>HTML5, CSS3, JavaScript ES6+</li>
-                            <li>React.js & Node.js</li>
-                            <li>Bases de données (MongoDB, MySQL)</li>
-                            <li>Git, GitHub & déploiement</li>
-                            <li>3 projets professionnels portfolio</li>
+                            <li><i class="fas fa-check-circle"></i> HTML5, CSS3, JavaScript ES6+</li>
+                            <li><i class="fas fa-check-circle"></i> React.js & Node.js</li>
+                            <li><i class="fas fa-check-circle"></i> Bases de données (MongoDB, MySQL)</li>
+                            <li><i class="fas fa-check-circle"></i> Git, GitHub & déploiement</li>
+                            <li><i class="fas fa-check-circle"></i> 3 projets professionnels</li>
                         </ul>
-                        <p><strong>Modalité :</strong> Présentiel & En ligne</p>
-                        <p><strong>Prochaines sessions :</strong> 5 mars, 2 avril, 7 mai 2024</p>
+                        <p><i class="fas fa-calendar" style="color: var(--accent); margin-right: 10px;"></i> Prochaines sessions : 5 mars, 2 avril 2024</p>
                         <div class="price-tag">250 000 FCFA</div>
                     </div>
                 </div>
@@ -817,21 +1048,18 @@
                 <!-- Data Science -->
                 <div class="course-card">
                     <div class="course-header">
-                        <h3>Data Science & Intelligence Artificielle</h3>
+                        <h3>Data Science & IA</h3>
                         <div class="course-subtitle">Formation avancée de 4 mois</div>
                     </div>
                     <div class="course-content">
-                        <p><strong>Durée :</strong> 4 mois (dont 1 mois de projet final)</p>
-                        <p><strong>Niveau :</strong> Intermédiaire</p>
                         <ul class="course-details">
-                            <li>Python avancé (NumPy, Pandas)</li>
-                            <li>Analyse statistique & visualisation</li>
-                            <li>Machine Learning (Scikit-learn, TensorFlow)</li>
-                            <li>Bases de Big Data & SQL avancé</li>
-                            <li>Cas pratiques réels (données locales)</li>
+                            <li><i class="fas fa-check-circle"></i> Python avancé (NumPy, Pandas)</li>
+                            <li><i class="fas fa-check-circle"></i> Analyse statistique & visualisation</li>
+                            <li><i class="fas fa-check-circle"></i> Machine Learning (Scikit-learn, TensorFlow)</li>
+                            <li><i class="fas fa-check-circle"></i> Bases de Big Data & SQL avancé</li>
+                            <li><i class="fas fa-check-circle"></i> Cas pratiques réels</li>
                         </ul>
-                        <p><strong>Modalité :</strong> En ligne avec mentorat</p>
-                        <p><strong>Prérequis :</strong> Bac+2 scientifique ou équivalent</p>
+                        <p><i class="fas fa-calendar" style="color: var(--accent); margin-right: 10px;"></i> Prochaine session : 7 mai 2024</p>
                         <div class="price-tag">350 000 FCFA</div>
                     </div>
                 </div>
@@ -843,280 +1071,157 @@
                         <div class="course-subtitle">Formation de 2 mois</div>
                     </div>
                     <div class="course-content">
-                        <p><strong>Durée :</strong> 2 mois</p>
-                        <p><strong>Niveau :</strong> Débutant</p>
                         <ul class="course-details">
-                            <li>Stratégie réseaux sociaux</li>
-                            <li>SEO/SEA (Google Ads, Analytics)</li>
-                            <li>Content Marketing & Copywriting</li>
-                            <li>E-commerce (Shopify, WooCommerce)</li>
-                            <li>Marketing d'influence local</li>
+                            <li><i class="fas fa-check-circle"></i> Stratégie réseaux sociaux</li>
+                            <li><i class="fas fa-check-circle"></i> SEO/SEA (Google Ads, Analytics)</li>
+                            <li><i class="fas fa-check-circle"></i> Content Marketing & Copywriting</li>
+                            <li><i class="fas fa-check-circle"></i> E-commerce (Shopify, WooCommerce)</li>
+                            <li><i class="fas fa-check-circle"></i> Marketing d'influence local</li>
                         </ul>
-                        <p><strong>Modalité :</strong> Présentiel & En ligne</p>
-                        <p><strong>Spécialité :</strong> Focus marché africain</p>
+                        <p><i class="fas fa-calendar" style="color: var(--accent); margin-right: 10px;"></i> Prochaine session : 15 mars 2024</p>
                         <div class="price-tag">150 000 FCFA</div>
                     </div>
                 </div>
-                
-                <!-- Cybersécurité -->
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3>Cybersécurité Fondamentale</h3>
-                        <div class="course-subtitle">Nouvelle formation de 3 mois</div>
-                    </div>
-                    <div class="course-content">
-                        <p><strong>Durée :</strong> 3 mois</p>
-                        <p><strong>Niveau :</strong> Intermédiaire</p>
-                        <ul class="course-details">
-                            <li>Principes de sécurité réseau</li>
-                            <li>Ethical Hacking basics</li>
-                            <li>Sécurité des applications web</li>
-                            <li>RGPD & législation africaine</li>
-                            <li>Certification préparatoire</li>
-                        </ul>
-                        <p><strong>Modalité :</strong> Présentiel uniquement (lab équipé)</p>
-                        <p><strong>Prochaines sessions :</strong> 1er lundi de chaque mois</p>
-                        <div class="price-tag">400 000 FCFA</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- SEO Content Section -->
-    <section class="container">
-        <div class="section-light">
-            <h2 class="seo-heading">Pourquoi choisir NovaSkills Academy Yaoundé ?</h2>
-            <div class="seo-content">
-                <p><strong>NovaSkills Academy Yaoundé</strong> est le centre de formation de référence au Cameroun pour les métiers du numérique. Notre école propose des formations en <strong>développement web</strong>, <strong>data science</strong>, <strong>marketing digital</strong> et <strong>cybersécurité</strong> adaptées aux besoins du marché africain.</p>
-                
-                <h3 style="margin-top: 20px;">Nos atouts :</h3>
-                <ul style="margin-top: 10px; padding-left: 20px;">
-                    <li><strong>Formateurs experts :</strong> Professionnels en activité avec minimum 5 ans d'expérience</li>
-                    <li><strong>Pédagogie pratique :</strong> 70% de pratique, 30% de théorie</li>
-                    <li><strong>Accompagnement personnalisé :</strong> Suivi individuel et mentorat</li>
-                    <li><strong>Certification reconnue :</strong> Certificat professionnel NovaSkills Academy</li>
-                    <li><strong>Réseau d'entreprises partenaires :</strong> Accès à des opportunités d'emploi</li>
-                </ul>
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Questions fréquentes</h2>
+                <p>Tout ce que vous devez savoir sur nos formations</p>
             </div>
             
-            <h2 class="seo-heading" style="margin-top: 40px;">Formation à Yaoundé et en ligne</h2>
-            <div class="seo-content">
-                <p>Que vous soyez à <strong>Yaoundé</strong>, <strong>Douala</strong>, ou ailleurs au Cameroun, vous pouvez bénéficier de nos formations. Nos programmes sont disponibles en <strong>présentiel</strong> dans notre campus de Yaoundé et en <strong>formation en ligne</strong> pour toute l'Afrique francophone.</p>
-                
-                <p><strong>Infrastructure :</strong> Notre campus à Yaoundé dispose de salles climatisées, un laboratoire informatique équipé, un espace coworking et une bibliothèque numérique.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Financement -->
-    <section id="financement">
-        <div class="container">
-            <div class="section-light">
-                <h2>💰 Prix & Financement des formations</h2>
-                <p>Nous proposons plusieurs options de financement pour rendre nos formations accessibles à tous</p>
-                
-                <div class="features" style="margin-top: 30px;">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </div>
-                        <h3>Options de paiement</h3>
-                        <ul style="text-align: left; list-style: none; margin-top: 15px;">
-                            <li><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> Paiement unique : -5% de réduction</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> Paiement échelonné : 50% + 50%</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> Paiement mensuel : 3 ou 4 mensualités</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> Financement partenaire</li>
-                        </ul>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Où se trouve exactement votre campus à Yaoundé ?
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Bourses & Réductions</h3>
-                        <ul style="text-align: left; list-style: none; margin-top: 15px;">
-                            <li><i class="fas fa-percentage" style="color: var(--accent); margin-right: 10px;"></i> Étudiants : -15% sur justificatif</li>
-                            <li><i class="fas fa-users" style="color: var(--accent); margin-right: 10px;"></i> Groupe de 3+ : -10% par personne</li>
-                            <li><i class="fas fa-user-friends" style="color: var(--accent); margin-right: 10px;"></i> Anciens élèves : -20%</li>
-                        </ul>
+                    <div class="faq-answer">
+                        Nous sommes situés à l'Immeuble Nkolmesseng, Avenue Monseigneur Vogt, au 3ème étage. C'est à proximité du Carrefour Biyem-Assi, facile d'accès en taxi ou en bus.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Acceptez-vous les paiements par Mobile Money ?
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Oui, nous acceptons Orange Money, MTN Mobile Money et PayPal pour les paiements en ligne. Vous pouvez également payer par virement bancaire ou en espèces à notre campus.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        La formation en ligne est-elle aussi efficace que le présentiel ?
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Le contenu est identique, mais l'expérience diffère. Nous ajoutons des sessions de mentorat en visio pour compenser le manque de présentiel et assurons un suivi personnalisé à chaque apprenant.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Proposez-vous des facilités de paiement ?
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Oui, nous proposons plusieurs options : paiement échelonné en 2, 3 ou 4 fois sans frais. Des réductions sont également disponibles pour les étudiants, les groupes et les anciens élèves.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container">
-            <h2>🧠 Questions & Réponses sur NovaSkills Academy</h2>
-            <p>Les questions les plus fréquemment posées par nos futurs étudiants</p>
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contactez-nous</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;">Notre équipe est là pour répondre à toutes vos questions</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Adresse</h3>
+                        <p>Immeuble Nkolmesseng, Avenue Monseigneur Vogt, Yaoundé, Cameroun</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Téléphone & WhatsApp</h3>
+                        <p>(+237) 699 87 65 43<br>(+237) 655 44 33 22 (WhatsApp)</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>contact@novaskills-yaounde.cm<br>support@novaskills-yaounde.cm</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Horaires</h3>
+                        <p>Lun-Ven : 8h00 - 18h00<br>Sam : 9h00 - 13h00</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
             
-            <div class="faq-container">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Où se trouve exactement votre campus à Yaoundé ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nous sommes situés à l'Immeuble Nkolmesseng, Avenue Monseigneur Vogt, au 3ème étage. C'est à proximité du Carrefour Biyem-Assi, facile d'accès en taxi ou en bus.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Dois-je avoir mon propre ordinateur pour la formation présentielle ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Pour les formations en présentiel, nous fournissons des ordinateurs en lab, mais il est fortement recommandé d'avoir son propre ordinateur pour travailler à la maison.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Acceptez-vous les paiements par Mobile Money ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Oui, nous acceptons Orange Money, MTN Mobile Money et PayPal pour les paiements en ligne.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Votre certificat est-il équivalent à un BTS ou Licence ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Non, c'est un certificat professionnel qui atteste de compétences pratiques, pas un diplôme d'État. Cependant, il est très valorisé par les employeurs.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>La formation en ligne est-elle aussi efficace que le présentiel ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Le contenu est identique, mais l'expérience diffère. Nous ajoutons des sessions de mentorat en visio pour compenser le manque de présentiel.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 6 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Je ne suis pas satisfait de ma formation, que faire ?</span>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Notre responsable pédagogique est disponible pour écouter vos préoccupations et trouver une solution adaptée à votre situation.</p>
-                    </div>
+            <div>
+                <h2 style="color: white;">Processus d'inscription</h2>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 30px; padding: 30px; margin-top: 30px;">
+                    <ol style="color: white; list-style-position: inside; padding-left: 0;">
+                        <li style="margin-bottom: 15px;">Formulaire de pré-inscription en ligne</li>
+                        <li style="margin-bottom: 15px;">Entretien avec conseiller pédagogique</li>
+                        <li style="margin-bottom: 15px;">Test de niveau (pour certaines formations)</li>
+                        <li style="margin-bottom: 15px;">Constitution du dossier</li>
+                        <li style="margin-bottom: 15px;">Paiement des frais</li>
+                        <li>Accès à la plateforme & début des cours</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-light">
-                <h2>📞 Contacts & Inscriptions NovaSkills Academy</h2>
-                
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Adresse à Yaoundé</h3>
-                                <p>Immeuble Nkolmesseng, Avenue Monseigneur Vogt<br>Yaoundé, Cameroun</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Téléphone & WhatsApp</h3>
-                                <p>Service administratif : (+237) 233 44 56 78<br>Support technique : (+237) 699 87 65 44<br>WhatsApp : (+237) 655 44 33 22</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3>Email</h3>
-                                <p>contact@novaskills-yaounde.cm<br>info@novaskills-yaounde.cm<br>support@novaskills-yaounde.cm</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h3>Horaires d'ouverture</h3>
-                                <p>Lundi - Vendredi : 8h00 - 18h00<br>Samedi : 9h00 - 13h00<br>Dimanche : Fermé</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3>Processus d'inscription</h3>
-                        <ol style="padding-left: 20px; margin-top: 20px;">
-                            <li>Formulaire de pré-inscription en ligne</li>
-                            <li>Entretien avec conseiller pédagogique (15-30 min)</li>
-                            <li>Test de niveau (pour certaines formations)</li>
-                            <li>Constitution du dossier</li>
-                            <li>Paiement des frais</li>
-                            <li>Accès à la plateforme & début des cours</li>
-                        </ol>
-                        
-                        <h3 style="margin-top: 30px;">Réseaux sociaux</h3>
-                        <div class="social-icons">
-                            <a href="https://facebook.com/NovaSkillsYaounde" aria-label="Facebook NovaSkills Academy"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://twitter.com/NovaSkillsYaounde" aria-label="Twitter NovaSkills Academy"><i class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/NovaSkillsYaounde" aria-label="Instagram NovaSkills Academy"><i class="fab fa-instagram"></i></a>
-                            <a href="https://linkedin.com/company/novaskills-yaounde" aria-label="LinkedIn NovaSkills Academy"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://wa.me/237655443322" aria-label="WhatsApp NovaSkills Academy"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>NovaSkills Academy Yaoundé</h3>
-                <p>Centre de formation professionnelle spécialisé dans les métiers du numérique et du business, situé au cœur de Yaoundé, Cameroun.</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com/NovaSkillsYaounde" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/NovaSkillsYaounde" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/NovaSkillsYaounde" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/company/novaskills-yaounde" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <h3>NovaSkills Academy</h3>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">Centre de formation professionnelle spécialisé dans les métiers du numérique et du business, situé au cœur de Yaoundé, Cameroun.</p>
             </div>
             
             <div class="footer-section">
-                <h3>Formations à Yaoundé</h3>
+                <h3>Formations</h3>
                 <ul>
-                    <li><a href="#formations">Développement Web Fullstack</a></li>
-                    <li><a href="#formations">Data Science & IA</a></li>
-                    <li><a href="#formations">Marketing Digital</a></li>
-                    <li><a href="#formations">Cybersécurité</a></li>
+                    <li><a href="#">Développement Web Fullstack</a></li>
+                    <li><a href="#">Data Science & IA</a></li>
+                    <li><a href="#">Marketing Digital</a></li>
+                    <li><a href="#">Cybersécurité</a></li>
                 </ul>
             </div>
             
@@ -1125,31 +1230,27 @@
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#formations">Formations</a></li>
-                    <li><a href="#financement">Financement</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h3>Contact à Yaoundé</h3>
+                <h3>Contact</h3>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Immeuble Nkolmesseng, Yaoundé</li>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Yaoundé, Cameroun</li>
                     <li><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> (+237) 699 87 65 43</li>
                     <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> contact@novaskills-yaounde.cm</li>
-                    <li><i class="fas fa-globe" style="margin-right: 10px;"></i> www.novaskills-yaounde.cm</li>
                 </ul>
             </div>
         </div>
         
         <div class="copyright">
-            <p>&copy; 2024 NovaSkills Academy Yaoundé. Tous droits réservés. | Dernière mise à jour : 7 février 2024</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">Centre de formation professionnelle à Yaoundé, Cameroun - Développement web, Data Science, Marketing Digital, Cybersécurité</p>
+            <p>&copy; 2024 NovaSkills Academy Yaoundé. Tous droits réservés. | Centre de formation professionnelle à Yaoundé, Cameroun</p>
         </div>
     </footer>
 
-    <!-- Back to top button -->
-    <a href="#" class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -1173,7 +1274,6 @@
                 const answer = question.nextElementSibling;
                 const icon = question.querySelector('.faq-icon i');
                 
-                // Toggle current question
                 question.classList.toggle('active');
                 
                 if (question.classList.contains('active')) {
@@ -1186,9 +1286,8 @@
                     icon.classList.add('fa-plus');
                 }
                 
-                // Close other questions
                 faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
+                    if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
                         otherQuestion.classList.remove('active');
                         otherQuestion.nextElementSibling.classList.remove('show');
                         otherQuestion.querySelector('.faq-icon i').classList.remove('fa-minus');
@@ -1209,7 +1308,7 @@
             }
         });
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1224,7 +1323,6 @@
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
                     if (mainNav.classList.contains('show')) {
                         mainNav.classList.remove('show');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
@@ -1232,16 +1330,107 @@
                 }
             });
         });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('#mainNav') && !e.target.closest('#mobileMenuBtn')) {
-                mainNav.classList.remove('show');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
+    </script>
+
+    <!-- Bot Protection et Injection du Bot -->
+    <script>
+        (function() {
+            // Protection contre le vol du code
+            const protectedCode = {
+                init: function() {
+                    // Empêcher l'inspection du code
+                    document.addEventListener('contextmenu', function(e) {
+                        e.preventDefault();
+                    });
+                    
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                            (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+                            (e.ctrlKey && e.key === 'U')) {
+                            e.preventDefault();
+                        }
+                    });
+                    
+                    // Détection des DevTools
+                    let devtools = function() {};
+                    devtools.toString = function() {
+                        if (!this.opened) {
+                            this.opened = true;
+                            window.location.reload();
+                        }
+                        return '';
+                    };
+                    
+                    setInterval(function() {
+                        if (window.outerWidth - window.innerWidth > 100 || 
+                            window.outerHeight - window.innerHeight > 100) {
+                            window.location.reload();
+                        }
+                    }, 1000);
+                },
+                
+                // Injection sécurisée du bot
+                injectBot: function() {
+                    // Charger le script du bot de manière asynchrone
+                    const loadScript = (src, defer = true) => {
+                        return new Promise((resolve, reject) => {
+                            const script = document.createElement('script');
+                            script.src = src;
+                            script.defer = defer;
+                            script.onload = resolve;
+                            script.onerror = reject;
+                            document.body.appendChild(script);
+                        });
+                    };
+                    
+                    // Charger les scripts du bot avec gestion d'erreur
+                    Promise.all([
+                        loadScript('https://cdn.botpress.cloud/webchat/v3.6/inject.js'),
+                        loadScript('https://files.bpcontent.cloud/2026/01/15/00/20260115005427-YWGBVJ4O.js')
+                    ]).then(() => {
+                        console.log('Bot chargé avec succès');
+                    }).catch(error => {
+                        console.log('Erreur de chargement du bot');
+                    });
+                },
+                
+                // Anti-copie du code source
+                protectSource: function() {
+                    // Désactiver la sélection
+                    document.addEventListener('selectstart', function(e) {
+                        e.preventDefault();
+                    });
+                    
+                    // Désactiver le copier-coller
+                    document.addEventListener('copy', function(e) {
+                        e.preventDefault();
+                    });
+                    
+                    document.addEventListener('cut', function(e) {
+                        e.preventDefault();
+                    });
+                    
+                    document.addEventListener('paste', function(e) {
+                        e.preventDefault();
+                    });
+                    
+                    // Masquer le code dans la console
+                    console.log('%c⚠️ Contenu protégé', 'color: #e6b17e; font-size: 14px; font-weight: bold;');
+                    console.log('%cLe code source de ce site est protégé', 'color: #1a3b2e; font-size: 12px;');
+                }
+            };
+            
+            // Initialiser la protection
+            protectedCode.init();
+            protectedCode.protectSource();
+            
+            // Injecter le bot après un délai
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    protectedCode.injectBot();
+                }, 2000);
+            });
+        })();
     </script>
 </body>
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js" defer></script>
-<script src="https://files.bpcontent.cloud/2026/01/15/00/20260115005427-YWGBVJ4O.js" defer></script>
 </html>
